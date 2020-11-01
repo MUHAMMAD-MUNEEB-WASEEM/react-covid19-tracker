@@ -1,0 +1,23 @@
+body{
+    background-color: rgba(228, 228, 228, 0.767);/*greyish background*/
+    background-repeat: no-repeat;
+}
+.container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;/*put chart in center*/
+}
+.image {
+    width: 370px;
+    margin-top: 50px;
+}
+/*for responsiveness*/
+@media (max-width:770px){
+    .container {
+        margin:0 10%;
+    }
+    .image{
+        width:100%;
+    }
+}
