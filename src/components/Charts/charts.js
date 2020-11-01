@@ -8,16 +8,16 @@ import styles from './charts.module.css'
 //import charts
 import { Line, Bar, Pie} from 'react-chartjs-2';
 const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
-    const [dailyData, setDailyData] = useState([]);
-    
-
-    useEffect (()=> {
-        const fetchAPI = async () => {
-            setDailyData(await fetchDailyData());
-            console.log("daily Data=", dailyData);
-
-        }
-        fetchAPI();
+    const [dailyData, setDailyData] = useState({});
+  
+    useEffect(() => {
+      const fetchMyAPI = async () => {
+        const initialDailyData = await fetchDailyData();
+  
+        setDailyData(initialDailyData);
+      };
+  
+      fetchMyAPI();
     }, []);
 
     const lineChart = (
@@ -96,12 +96,11 @@ const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
         ) : null
     );
 
-
     return (
         <div className={styles.container}>
             {country ? barChart : lineChart}
             {pieChart}
         </div>
-    )
-}
+    );
+};
 export default Charts;
