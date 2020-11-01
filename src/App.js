@@ -16,7 +16,7 @@ import covidImage from './images/covid.png';
 
 import Header from "./components/header/Header";
 
-//import Footer from "./components/footer/Footer";
+import Footer from "./components/footer/Footer";
 
 class App extends React.Component {
   state = {
@@ -43,13 +43,14 @@ class App extends React.Component {
 
     return (
       <div>
-        <Header />
+        <Header className={styles.headfoot}/>
         <div className={styles.container}>
           <img className={styles.image} src={covidImage} alt="Covid-19 Pandemic"/>
           <Cards data={data} />
           <CountryPicker handleCountryChange={this.handleCountryChange} />
           <Charts data={data} country={country} /> 
         </div>
+        <Footer className={styles.headfoot}/>
       </div>
     );
   }

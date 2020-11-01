@@ -1,9 +1,76 @@
 .footer {
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
+    height: 200px;
     background-color: #36D4C1;
     color: white;
     text-align: center;
-  }
+}
+
+.heading{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+}
+.social{
+    padding-right: 1%;
+    display: inline;
+
+    justify-content: space-between;
+}
+.fa {
+    padding: 15px 25px;
+    height: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+  
+  /* Add a hover effect if you want */
+.fa:hover {
+opacity: 0.7;
+}
+  
+/* Set a specific color for each brand */
+  
+/* Facebook */
+.facebook {
+    background: #3B5998;
+    color: white;
+    margin-right: 1.5%;
+}
+.linked {
+    background: #0073B1;
+    color: white;
+    margin-right: 1.5%;
+}
+.github {
+    background: #24292E;
+    color: white;
+    margin-right: 1.5%;
+}  
+  /* Twitter */
+.fa-twitter { 
+    background: #55ACEE;
+    color: white;
+    margin-right: 1%;
+}
+
+@media (max-width:770px){
+    .footer{
+        width: 100%;
+    }
+    .heading{
+        padding-top: 20px;
+        padding-bottom: 30px;
+        font-size: 20px;
+        color: black;
+        font-weight: bold;
+    }
+}

@@ -7,6 +7,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;/*put chart in center*/
+    margin-bottom:50px;
 }
 .image {
     width: 370px;
@@ -15,9 +16,12 @@ body{
 /*for responsiveness*/
 @media (max-width:770px){
     .container {
-        margin:0 10%;
+        margin:2% 10%;
     }
     .image{
         width:100%;
+    }
+    .headfoot{
+        width:100%;;
     }
 }
