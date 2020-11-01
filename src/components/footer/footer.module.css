@@ -73,4 +73,14 @@ opacity: 0.7;
         color: black;
         font-weight: bold;
     }
+    .fa {
+        padding: 10px 15px;
+        height: 5px;
+        font-size: 15px;
+        font-weight: bold;
+        width: 5px;
+        text-align: center;
+        text-decoration: none;
+    }
+     
 }
