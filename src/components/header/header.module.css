@@ -9,3 +9,15 @@
 .font{
     font-weight: bolder !important;
 }
+@media (max-width:770px){
+    .image{
+        width: 35px;
+        height: 35px;
+        margin-right:1%;
+        margin-left:0;
+    }
+    .font{
+        font-weight: bolder !important;
+        font-size: 20px !important;
+    }
+}
