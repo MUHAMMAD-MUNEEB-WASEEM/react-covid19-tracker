@@ -14,6 +14,10 @@ import { fetchData } from './api/api';
 //importing image
 import covidImage from './images/covid.png';
 
+import Header from "./components/header/Header";
+
+//import Footer from "./components/footer/Footer";
+
 class App extends React.Component {
   state = {
     data: {},
@@ -38,11 +42,14 @@ class App extends React.Component {
     const { data, country } = this.state;
 
     return (
-      <div className={styles.container}>
-        <img className={styles.image} src={covidImage} alt="Covid-19 Pandemic"/>
-        <Cards data={data} />
-        <CountryPicker handleCountryChange={this.handleCountryChange} />
-        <Charts data={data} country={country} /> 
+      <div>
+        <Header />
+        <div className={styles.container}>
+          <img className={styles.image} src={covidImage} alt="Covid-19 Pandemic"/>
+          <Cards data={data} />
+          <CountryPicker handleCountryChange={this.handleCountryChange} />
+          <Charts data={data} country={country} /> 
+        </div>
       </div>
     );
   }

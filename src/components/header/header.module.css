@@ -1,0 +1,11 @@
+.image{
+    width: 60px;
+    height: 60px;
+    margin-right:1%;
+}
+.background{
+    background-color: #36D4C1;
+}
+.font{
+    font-weight: bolder !important;
+}
