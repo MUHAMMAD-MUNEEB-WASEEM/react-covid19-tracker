@@ -5,9 +5,10 @@ import { fetchDailyData } from '../../api/api';
 //importing css
 import styles from './charts.module.css'
 
+
 //import charts
 import { Line, Bar, Pie} from 'react-chartjs-2';
-const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
+const Charts = ({ data: { confirmed, recovered, deaths, lastUpdate }, country }) => {
     const [dailyData, setDailyData] = useState({});
   
     useEffect(() => {
@@ -41,6 +42,10 @@ const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
 
                 }],
             }}
+            options={{
+                legend: {display:false},
+                title:{ display:true, text:`Current Pandemic situation in ${country ? country : "Globe"}`},
+            }}
         />):null
 
     );
@@ -63,7 +68,7 @@ const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
                 }}
                 options={{
                     legend: {display:false},
-                    title:{ display:true, text:`Current Pandemic situation in ${country}`},
+                    title:{ display:true, text:`Current Pandemic situation in ${country ? country : "Globe"}`},
                 }}
             
             />
@@ -89,13 +94,20 @@ const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
                 }}
                 options={{
                     legend: {display:false},
-                    title:{ display:true, text:`Current Pandemic situation in ${country}`},
+                    title:{ display:true, text:`Current Pandemic situation in ${country ? country : "Globe"}`},
                 }}
             
             />
         ) : null
     );
 
+//     <div className={styles.container}>
+    //     {country ? barChart : lineChart}
+    //     {pieChart}
+//      </div>  
+
+//This div means if any country is selected, then show bar chart, otherwise line chart and I have made
+//pie chart compulsory in any of the case
     return (
         <div className={styles.container}>
             {country ? barChart : lineChart}

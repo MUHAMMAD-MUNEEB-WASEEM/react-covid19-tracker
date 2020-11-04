@@ -1,7 +1,6 @@
 import React from 'react';
 
 //importing components
-
 import Cards from './components/Cards/cards';
 import Charts from './components/Charts/charts';
 import CountryPicker from './components/CountryPicker/countryPicker';
@@ -14,9 +13,13 @@ import { fetchData } from './api/api';
 //importing image
 import covidImage from './images/covid.png';
 
+//importing header
 import Header from "./components/header/Header";
 
+//importing footer
 import Footer from "./components/footer/Footer";
+
+import { Typography } from '@material-ui/core'
 
 class App extends React.Component {
   state = {
@@ -29,13 +32,11 @@ class App extends React.Component {
 
     this.setState({ data });
   }
-
+  //handleCountryChange method is used to change countries or to handle country
   handleCountryChange = async (country) => {
     const data = await fetchData(country);
 
     this.setState({ data, country: country });
-    console.log("country1 = ", data);
-    console.log("country2 = ", country)
   }
 
   render() {
@@ -46,8 +47,9 @@ class App extends React.Component {
         <Header className={styles.headfoot}/>
         <div className={styles.container}>
           <img className={styles.image} src={covidImage} alt="Covid-19 Pandemic"/>
-          <Cards data={data} />
           <CountryPicker handleCountryChange={this.handleCountryChange} />
+          <Typography color="textSecondary" className={styles.centre}>Last Updated: {new Date(data.lastUpdate).toDateString()}</Typography>
+          <Cards data={data} />
           <Charts data={data} country={country} /> 
         </div>
         <Footer className={styles.headfoot}/>

@@ -12,7 +12,6 @@ import styles from './cards.module.css';
 import cx from 'classnames';
 
 const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate}}) => {
-    console.log("COnfirmed Value= ", lastUpdate)
     if (!confirmed){
         return 'loading...'
     }

@@ -3,6 +3,7 @@ import React from 'react';
 
 import styles from './footer.module.css';
 
+//importing cx to use multiple classes in single tag
 import cx from "classnames";
 
 

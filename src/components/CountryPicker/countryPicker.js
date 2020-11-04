@@ -19,7 +19,11 @@ const CountryPicker = ({ handleCountryChange }) => {
 
         }
         fetchAPI();
-    }, [setFetchedCountries]);
+    }, [setFetchedCountries]);//pass [setFetchedCountries] so that when certain country selected, it stops their
+
+    //native select tag is used to select different countries when change, thats why onchange use here
+    //after selecting country, it fetch all required information about that country from api from 
+    //fetchCountries function
  
     return (
         <FormControl className={styles.formControl}>

@@ -8,7 +8,8 @@ export const fetchData = async (country) => {
   if (country) {
     changeableUrl = `${url}/countries/${country}`;
   }
-
+//if some country is selected, then change api as per that country otherwise api remains same and
+//gives global data
   try {
     const { data: { confirmed, recovered, deaths, lastUpdate } } = await axios.get(changeableUrl);
 
@@ -18,6 +19,7 @@ export const fetchData = async (country) => {
   }
 };
 
+//fetching daily data
 export const fetchDailyData = async () => {
   try {
     const { data } = await axios.get(`${url}/daily`);
@@ -28,6 +30,7 @@ export const fetchDailyData = async () => {
   }
 };
 
+//fetched all countries
 export const fetchCountries = async () => {
   try {
     const { data: { countries } } = await axios.get(`${url}/countries`);
