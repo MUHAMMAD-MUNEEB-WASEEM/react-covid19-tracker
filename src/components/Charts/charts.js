@@ -45,7 +45,13 @@ const Charts = ({ data: { confirmed, recovered, deaths, lastUpdate }, country })
             }}
             options={{
                 legend: {display:true, position:'right'},
-                title:{ display:true, text:`Current Pandemic situation in ${country ? country : "Globe"}`},
+                title:{ 
+                    display:true, 
+                    text:`Current Pandemic situation in ${country ? country : "Globe"}`,
+                    fontColor: "#000",
+                    fontSize: 15,
+                },
+
             }}
         />):null
 
@@ -69,8 +75,15 @@ const Charts = ({ data: { confirmed, recovered, deaths, lastUpdate }, country })
                 }}
                 options={{
                     legend: {display:false},
-                    title:{ display:true, text:`Current Pandemic situation in ${country ? country : "Globe"}`},
-                }}
+                    title:{ 
+                        display:true, 
+                        text:`Current Pandemic situation in ${country ? country : "Globe"}`,
+                        fontColor: "#000",
+                        fontSize: 15,
+                    
+                    },
+                }
+            }
             
             />
         ) : null
@@ -102,6 +115,15 @@ const Charts = ({ data: { confirmed, recovered, deaths, lastUpdate }, country })
                     responsive: true,
                     legend: {display:true, position:"right"},
                     //title:{ display:true, text:`Current Pandemic situation in ${country ? country : "Globe"}`},
+                    layout: {
+                        padding: {
+                            left: 0,
+                            right: 0,
+                            top: 20,
+                            bottom: 0,
+                        }
+                    }
+                
                 }}
             
             />
