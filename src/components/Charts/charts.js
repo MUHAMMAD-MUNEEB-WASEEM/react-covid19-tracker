@@ -30,20 +30,21 @@ const Charts = ({ data: { confirmed, recovered, deaths, lastUpdate }, country })
                 datasets: [{
                     data: dailyData.map(({ confirmed })=>confirmed),
                     label: 'Infected',
-                    borderColor: '#3333ff',
+                    borderColor: 'rgba(250, 126, 10, 1)',
+                    backgroundColor: 'rgba(250, 126, 10, 0.59)',
                     fill: true,
 
                 }, {
                     data: dailyData.map(({ deaths })=>deaths),
                     label: 'Deaths',
-                    borderColor: 'red',
-                    backgroundColor: 'rgba(255, 0, 0, 0.5)',
+                    borderColor: 'rgba(228, 12, 12, 1)',
+                    backgroundColor: 'rgba(228, 12, 12, 0.59)',
                     fill: true,
 
                 }],
             }}
             options={{
-                legend: {display:false},
+                legend: {display:true, position:'right'},
                 title:{ display:true, text:`Current Pandemic situation in ${country ? country : "Globe"}`},
             }}
         />):null
@@ -58,9 +59,9 @@ const Charts = ({ data: { confirmed, recovered, deaths, lastUpdate }, country })
                     datasets: [{
                         label: 'People',
                         backgroundColor:[ 
-                            'rgba(0, 0, 255, 0.5)',
-                            'rgba(0, 255, 0, 0.5)',
-                            'rgba(255, 0, 0, 0.5)',
+                            'rgba(250, 126, 10, 0.8)',
+                            'rgba(228, 12, 12, 0.8)',
+                            'rgba(228, 210, 12, 0.8)',
                         ],
                         data:[confirmed.value, recovered.value, deaths.value]
                     }]
@@ -84,17 +85,23 @@ const Charts = ({ data: { confirmed, recovered, deaths, lastUpdate }, country })
                     datasets: [{
                         label: 'People',
                         backgroundColor:[ 
-                            'rgba(0, 0, 255, 0.5)',
-                            'rgba(255, 0, 0, 0.5)',
-                            'rgba(0, 255, 0, 0.5)',
+                            'rgba(250, 126, 10, 0.8)',
+                            'rgba(228, 12, 12, 0.8)',
+                            'rgba(228, 210, 12, 0.8)',
+                        ],
+                        borderColor: [ 
+                            'rgba(250, 126, 10, 1)',
+                            'rgba(228, 12, 12, 1)',
+                            'rgba(228, 210, 12, 1)',
                         ],
                         data:[confirmed.value, deaths.value, recovered.value]
                     }]
 
                 }}
                 options={{
-                    legend: {display:false},
-                    title:{ display:true, text:`Current Pandemic situation in ${country ? country : "Globe"}`},
+                    responsive: true,
+                    legend: {display:true, position:"right"},
+                    //title:{ display:true, text:`Current Pandemic situation in ${country ? country : "Globe"}`},
                 }}
             
             />

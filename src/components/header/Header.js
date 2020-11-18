@@ -26,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   color:{
-      backgroundColor:  "#36D4C1"  
+      backgroundColor:  "#36D4C1", 
+
     },
     textColor:{
         color: "black"
@@ -39,7 +40,7 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-    <AppBar className={classes.color} position="static">
+    <AppBar className={styles.background} position="static">
       <Toolbar>
           <img className={styles.image} src={virusImage} alt="Virus" />
         <Typography variant="h5" className={cx(classes.title, classes.textColor, styles.font)}>

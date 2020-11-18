@@ -11,7 +11,8 @@ import styles from './App.module.css';
 import { fetchData } from './api/api';
 
 //importing image
-import covidImage from './images/covid.png';
+//import covidImage from './images/covid.png';
+import covidImage from './images/red_covid_3.png';
 
 //importing header
 import Header from "./components/header/Header";

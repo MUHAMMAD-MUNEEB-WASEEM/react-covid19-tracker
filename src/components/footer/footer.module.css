@@ -4,7 +4,8 @@
     bottom: 0;
     width: 100%;
     height: 200px;
-    background-color: #36D4C1;
+    background-color: #ea5d2c;
+    background-image: linear-gradient(62deg, #ea5d2c 0%, #febf28 100%);
     color: white;
     text-align: center;
 }
