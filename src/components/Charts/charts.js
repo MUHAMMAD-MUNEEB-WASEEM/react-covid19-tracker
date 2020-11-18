@@ -66,8 +66,8 @@ const Charts = ({ data: { confirmed, recovered, deaths, lastUpdate }, country })
                         label: 'People',
                         backgroundColor:[ 
                             'rgba(250, 126, 10, 0.8)',
-                            'rgba(228, 12, 12, 0.8)',
                             'rgba(228, 210, 12, 0.8)',
+                            'rgba(228, 12, 12, 0.8)'
                         ],
                         data:[confirmed.value, recovered.value, deaths.value]
                     }]
